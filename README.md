@@ -10,3 +10,37 @@ The main function first reads 6 integers from the input, and assigns them to the
 The main function then prints the reversed array.
 
 */
+
+
+#include <stdio.h>
+void reverseArray(int *);
+int main() {
+
+    int arr[6] = {0, 0, 0, 0, 0, 0};
+    int j =0;
+    for(j=0;j<6;j++){
+
+        scanf("%d", &arr[j]);
+    }
+    reverseArray(arr);
+    j=0;
+    for(j=0;j<6;j++){
+
+        printf("%d ", arr[j]);
+    }
+    return 0;
+}
+void reverseArray(int * ptr){
+    int i = 0;
+    int temp[6] = {0, 0, 0, 0, 0, 0};
+    for(i=0;i<6;i++){
+
+      *(temp + 5 -i) = *(ptr +i);
+    }
+    i =0;
+    for(i=0;i<6;i++){
+
+        *(ptr +i) = *(temp +i);
+    }
+}
+//Write your function here
